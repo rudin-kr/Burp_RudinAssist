@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'com.rusist'
+version '2311'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'net.portswigger.burp.extender:burp-extender-api:2.3'
+    implementation 'org.json:json:20231013'
+//    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+}
+
+tasks.register('rusistBuild', Jar) {
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE // 라이브러리 중복 제거
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

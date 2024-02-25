@@ -1,0 +1,19 @@
+불충인가 점검 대상 conf
+- 필요 내용:
+-- HOST: 정규 표현식
+-- Header ID: HTTP Header(고정 문자열), Cookie / Authentication / Custom Header 등
+-- Header Value: Keyword - Header value에서 변환할 문자열
+-- on/off: boolean
+
+Array :[
+	{host: "", header: "", target_string: "", onoff: true}, // Object Map? model class?
+]
+
+/* Java Swing Dialog에서 ESC 키 누를 시 cell edit cancel이 호출 되지 않음 */
+/* ESC key 누르면 수정한 상태가 취소가 안되기 때문에 Config가 바뀐 줄 오해할 소지가 있어서 추가함 */
+// BUG: https://stackoverflow.com/questions/4490659/why-is-cancelcellediting-not-called-when-pressing-escape-while-editing-a-jtabl
+// 이유 불문하고 창을 그냥 닫으면 cancelCellEditing() 함수 강제 호출
+CellEditor cellEditor = ruleTable.getCellEditor();
+if (cellEditor != null) {
+    cellEditor.cancelCellEditing();
+}

@@ -1,0 +1,13 @@
+1. BUILD
+-> 터미널 > ./gradlew build wallruBuild
+OR
+-> Intellj -> 실행 -> 구성 편집 -> gradle -> build wallruBuild
+
+Burp API Doc: https://portswigger.net/burp/extender/api/
+
+java version: https://stackoverflow.com/questions/9170832/list-of-java-class-file-format-major-version-numbers
+basic example:
+1. https://portswigger.net/burp/extender#SampleExtensions
+2. https://www.schellman.com/blog/write-a-burp-extension
+
+UI: https://forum.portswigger.net/thread/add-an-options-tab-like-the-one-the-proxy-tool-has-to-an-extension-6a3de6de

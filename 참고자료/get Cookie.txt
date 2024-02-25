@@ -1,0 +1,20 @@
+PrintWriter stdout = new PrintWriter(callbacks.getStdout(), true);
+stdout.println("-------------------------------------------------------------------------");
+stdout.println("getCookieJarContents() Result: " + helpers.analyzeRequest(messageInfo).getUrl());
+callbacks.getCookieJarContents().forEach(iCookie -> {
+    stdout.println("- domain: " + iCookie.getDomain());
+    stdout.println("- name  : " + iCookie.getName());
+    stdout.println("- path  : " + iCookie.getPath());
+    stdout.println("- value : " + iCookie.getValue());
+    stdout.println("");
+});
+stdout.println("-------------------------------------------------------------------------");
+
+# 출력: Burp -> Project Options -> Session -> Cookie Jar에 수집된 쿠키를 뿌림
+-------------------------------------------------------------------------
+getCookieJarContents() Result: https://s.pstatic.net:443/static/newsstand/2020/logo/light/0604/384.png
+- domain: doubleclick.net
+- name  : IDE
+- path  : null
+- value : 쿠키값
+-------------------------------------------------------------------------

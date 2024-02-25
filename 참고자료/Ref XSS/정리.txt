@@ -1,0 +1,7 @@
+UPdate 중
+
+1. Content-Type 정보 획득 -> Json은 브라우저에서 직접접근해도 XSS가 안됨
+- List Table
+2. Path, Parameter Key Filter 추가
+- 탐지 분류를 List Table에 추가해야함
+- 전체 Filter는 List Table에서 Filter해야하기 때문
